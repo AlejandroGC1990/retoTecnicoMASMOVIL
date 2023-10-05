@@ -1,4 +1,4 @@
-package com.example.retotecnicomasmovil
+package com.example.retotecnicomm
 
 import org.junit.Test
 

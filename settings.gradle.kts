@@ -13,5 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "retoTecnicoMASMOVIL"
+rootProject.name = "reto tecnico mm"
 include(":app")
+ 
