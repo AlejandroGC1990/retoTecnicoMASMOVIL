@@ -1,79 +1,43 @@
 package com.example.retotecnicomm.ui.screens.home
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material.*
-import androidx.compose.material.SnackbarDefaults.backgroundColor
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.retotecnicomm.R
-import com.example.retotecnicomm.api.ImgurApiService
-
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.retotecnicomm.ui.components.CardImage
 @Composable
-fun HomeScreen(
-    viewModel: HomeViewModel,
-    navigateToCamera: () -> Unit
-) {
-    Text(text = "Home PATATATATATATATATATATATATATATATATATATATATATAT")
+fun HomeScreen() {
 
-    val images = remember { mutableStateListOf<ImgurApiService.ImgurImage>() }
+    val viewModel: HomeViewModel = viewModel()
 
-    LaunchedEffect(Unit) {
-        images.addAll(viewModel.fetchGalleryImages(page = 0))
-    }
+    val imageList = remember {viewModel.getImageList()}
 
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text(text = "Gallery") },
-                backgroundColor = Color.DarkGray
-                )
-        },
-        bottomBar = {
-            BottomAppBar(
-                backgroundColor = Color.DarkGray
-            ) {
-                IconButton(
-                    onClick = {navigateToCamera()},
-                    modifier = Modifier.padding(16.dp)
-                ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_baseline_camera_alt_24),
-                        contentDescription = null,
-                        tint = Color.White
-                    )
-                }
-            }
-        }
+    Surface(
+        color = MaterialTheme.colorScheme.background,
+        modifier = Modifier.fillMaxSize()
     ) {
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp)
-        ) {
-            items(images) { image ->
-                Card(
-                    modifier = Modifier
-                      .fillMaxWidth()
-                      .padding(8.dp)
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.placeholder),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(200.dp)
-                    )
-                }
+        Column {
+            Text(
+                text = "Home PATATATATATATATATATATATATATATATATATATATATATAT",
+                style = MaterialTheme.typography.bodySmall,
+                modifier = Modifier.padding(16.dp)
+            )
+            Text(
+                text = "Home Galería de Imágenes",
+                style = MaterialTheme.typography.bodyLarge,
+                modifier = Modifier.padding(16.dp)
+            )
 
+            imageList.forEach { imageResource ->
+                CardImage(imageResId = imageResource, viewModel = viewModel)
             }
         }
     }
