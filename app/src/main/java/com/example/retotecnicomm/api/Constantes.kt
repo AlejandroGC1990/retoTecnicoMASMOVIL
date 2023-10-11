@@ -1,4 +1,4 @@
-//package com.example.retotecnicomm.api
+package com.example.retotecnicomm.api//package com.example.retotecnicomm.api
 //
 //object Constantes {
 //    //Authorization: Client-ID

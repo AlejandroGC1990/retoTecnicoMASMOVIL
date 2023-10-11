@@ -1,4 +1,4 @@
-//package com.example.retotecnicomm.api
+package com.example.retotecnicomm.api//package com.example.retotecnicomm.api
 //
 //import retrofit2.http.GET
 //import retrofit2.http.Query

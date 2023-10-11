@@ -1,4 +1,4 @@
-package com.example.retotecnicomm.ui.theme
+package com.example.retotecnicomm.theme
 
 import androidx.compose.ui.graphics.Color
 

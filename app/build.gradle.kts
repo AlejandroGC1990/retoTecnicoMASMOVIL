@@ -63,7 +63,14 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation ("androidx.test.ext:junit:1.1.5")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
-
+    implementation ("androidx.compose.runtime:runtime:1.0.5")
+    implementation ("androidx.compose.foundation:foundation:1.5.3")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel:2.6.2")
+    implementation ("androidx.lifecycle:lifecycle-livedata:2.6.2")
+    implementation ("androidx.lifecycle:lifecycle-common-java8:2.3.1")
+//  APIS
+//  Obtener imagen galería
+    implementation("io.coil-kt:coil-compose:2.4.0")
 
 //    implementation("androidx.core:core-ktx:1.12.0")
 //    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
@@ -82,7 +89,7 @@ dependencies {
 //    implementation("com.android.support:support-annotations:28.0.0")
 //
 //    // Compose
-//    implementation("androidx.compose.foundation:foundation:1.5.3")
+//
 //    implementation("androidx.compose.material:material:1.5.3")
 //    implementation("androidx.compose.ui:ui:1.5.3")
 //    implementation("androidx.compose.ui:ui-graphics:1.5.3")

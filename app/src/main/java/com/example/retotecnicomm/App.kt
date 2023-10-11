@@ -1,16 +1,18 @@
 package com.example.retotecnicomm
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.retotecnicomm.ui.screens.home.HomeScreen
-import com.example.retotecnicomm.ui.screens.login.LoginScreen
-import com.example.retotecnicomm.utils.Screen
+import com.example.retotecnicomm.screens.home.HomeScreen
+import com.example.retotecnicomm.screens.login.LoginScreen
+import com.example.retotecnicomm.ui.utils.Screen
 
 @Composable
 fun App() {
     val navController = rememberNavController()
+    val context = LocalContext.current
 
     NavHost(
         navController = navController,
@@ -22,7 +24,7 @@ fun App() {
             })
         }
         composable("home") {
-            HomeScreen()
+            HomeScreen(context)
         }
     }
 }

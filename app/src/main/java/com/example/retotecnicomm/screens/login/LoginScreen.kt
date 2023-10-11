@@ -1,4 +1,4 @@
-package com.example.retotecnicomm.ui.screens.login
+package com.example.retotecnicomm.screens.login
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

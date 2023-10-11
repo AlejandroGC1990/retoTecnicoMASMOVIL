@@ -1,4 +1,4 @@
-package com.example.retotecnicomm.ui.theme
+package com.example.retotecnicomm.theme
 
 import android.app.Activity
 import android.os.Build
