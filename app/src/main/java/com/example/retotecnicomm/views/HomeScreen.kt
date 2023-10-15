@@ -1,9 +1,8 @@
-package com.example.retotecnicomm.screens.home
+package com.example.retotecnicomm.views
 
 
 //import androidx.compose.runtime.*
 import HomeViewModelFactory
-import android.content.Context
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -24,10 +23,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.retotecnicomm.components.CardImage
-import com.example.retotecnicomm.ui.utils.FileUtils.saveImageToInternalStorage
+import com.example.retotecnicomm.ui.utils.FileUtils
+import com.example.retotecnicomm.viewmodel.HomeViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
+
 @Composable
-fun HomeScreen(context: Context) {
+fun HomeScreen(navController: NavController) {
 
 // Obtener el contexto actual
     val context = LocalContext.current
@@ -38,12 +43,16 @@ fun HomeScreen(context: Context) {
 
     val laucher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent()
-    ) {uri: Uri? ->
+    ) { uri: Uri? ->
         uri?.let {
             val fileName = "image.jpg"
-            saveImageToInternalStorage(context, it, fileName)
-            val imagePath = context.filesDir.path + "/images/$fileName"
-            viewModel.addImage(imagePath)
+            runBlocking {
+                withContext(Dispatchers.IO) {
+                    FileUtils.saveImageToInternalStorage(context, it, fileName)
+                    val imagePath = context.filesDir.path + "/images/$fileName"
+                    viewModel.addImage(imagePath)
+                }
+            }
         }
     }
 
@@ -64,7 +73,7 @@ fun HomeScreen(context: Context) {
                     modifier = Modifier.padding(16.dp)
                 )
                 Button(
-                    onClick = {laucher.launch("image/*") },
+                    onClick = { laucher.launch("image/*") },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(8.dp)

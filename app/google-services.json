@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "443073838522",
+    "project_id": "retotecnicomm",
+    "storage_bucket": "retotecnicomm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443073838522:android:db3365bc51453a18bc3183",
+        "android_client_info": {
+          "package_name": "com.example.retotecnicomm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwB_Tng_q9GP96aLfYvgtUJNVCmyO3jtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

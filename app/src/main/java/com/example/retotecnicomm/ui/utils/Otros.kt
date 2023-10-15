@@ -3,15 +3,10 @@ package com.example.retotecnicomm.ui.utils
 import android.content.Context
 import android.net.Uri
 import android.util.Log
+import androidx.compose.runtime.Composable
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
-
-sealed class Screen(val key: String) {
-    object Login : Screen("login")
-    object Home : Screen("home")
-}
-
 
 object FileUtils {
     fun saveImageToInternalStorage(context: Context, imageUri: Uri, fileName: String) {

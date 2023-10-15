@@ -1,30 +1,31 @@
 package com.example.retotecnicomm
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.example.retotecnicomm.screens.home.HomeScreen
-import com.example.retotecnicomm.screens.login.LoginScreen
-import com.example.retotecnicomm.ui.utils.Screen
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.example.retotecnicomm.navigation.Navigation
 
 @Composable
 fun App() {
-    val navController = rememberNavController()
-    val context = LocalContext.current
-
-    NavHost(
-        navController = navController,
-        startDestination = Screen.Login.key
+    Surface(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 46.dp),
+        color = MaterialTheme.colorScheme.background
     ) {
-        composable(Screen.Login.key) {
-            LoginScreen(goToHome = {
-                navController.navigate(Screen.Home.key)
-            })
-        }
-        composable("home") {
-            HomeScreen(context)
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Navigation()
+
         }
     }
 }

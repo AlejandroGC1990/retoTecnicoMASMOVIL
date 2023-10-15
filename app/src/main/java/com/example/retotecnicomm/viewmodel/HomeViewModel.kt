@@ -1,4 +1,4 @@
-package com.example.retotecnicomm.screens.home
+package com.example.retotecnicomm.viewmodel
 
 import android.content.Context
 import android.util.Log

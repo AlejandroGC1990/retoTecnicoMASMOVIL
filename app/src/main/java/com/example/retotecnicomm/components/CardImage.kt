@@ -21,13 +21,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import coil.compose.rememberImagePainter
-import com.example.retotecnicomm.screens.home.HomeViewModel
+import coil.compose.rememberAsyncImagePainter
+import com.example.retotecnicomm.viewmodel.HomeViewModel
 import java.io.File
 
 @Composable
 fun CardImage (imagePath: String, viewModel: HomeViewModel) {
-    val viewModel: HomeViewModel = viewModel
+//    val viewModel: HomeViewModel = viewModel
 
     val file = File(imagePath)
     val imageName = file.name
@@ -49,8 +49,8 @@ fun CardImage (imagePath: String, viewModel: HomeViewModel) {
 //        )
         Image(
 //            painter = painterResource(id = imageResId),
-            painter = rememberImagePainter(
-                data = File(imagePath)
+            painter = rememberAsyncImagePainter(
+                model = File(imagePath)
                 //builder = {configuracion adicional de la iamgen}
             ),
             contentDescription = null,
