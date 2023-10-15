@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.retotecnicomm.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -64,10 +65,21 @@ class LoginScreenViewModel: ViewModel() {
 
     private fun createUser(displayName: String?) {
         val userId = auth.currentUser?.uid
-        val user = mutableMapOf<String, Any>()
+//        val user = mutableMapOf<String, Any>()
+//
+//        user["user_id"] = userId.toString()
+//        user["display_name"] = displayName.toString()
 
-        user["user_id"] = userId.toString()
-        user["display_name"] = displayName.toString()
+        //Usando data class para crear ususarios
+        val user = User(
+            userId = userId.toString(),
+            displayName = displayName.toString(),
+            avatarUrl = "",
+            quote = "patata",
+            profession = "dev",
+            id = null
+        ).toMap()
+
         FirebaseFirestore.getInstance().collection("users")
             .add(user)
             .addOnSuccessListener {
