@@ -36,10 +36,15 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.retotecnicomm.navigation.Screens
+import com.example.retotecnicomm.viewmodel.LoginScreenViewModel
 
 
 @Composable
-fun LoginScreen(navController: NavController) {
+fun LoginScreen(
+    navController: NavController,
+    viewModel: LoginScreenViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+) {
     val showLoginForm = rememberSaveable{
         mutableStateOf(true)
     }
@@ -52,9 +57,11 @@ fun LoginScreen(navController: NavController) {
         ){
             if (showLoginForm.value) {
                 Text(text="Iniciar Sesión")
-                UserForm(isCreateAccount = false){
-                        email, password ->
-                    Log.d("RetoTécnicoMM", "Logueado con $email y $password")
+                UserForm(isCreateAccount = false){email, password ->
+                    viewModel.signInWithEmailAndPassword(email, password){
+                        Log.d("RetoTécnicoMM", "Logueado con $email y $password")
+                        navController.navigate(Screens.HomeScreen.name)
+                    }
                 }
             }else{
                 Text(text="Crear Sesión")

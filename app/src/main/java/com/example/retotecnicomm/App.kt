@@ -25,7 +25,6 @@ fun App() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Navigation()
-
         }
     }
 }

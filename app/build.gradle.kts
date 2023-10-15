@@ -1,8 +1,11 @@
 plugins {
     id ("com.android.application")
-    id ("kotlin-android")
-    id ("kotlin-parcelize")
-    id("com.google.gms.google-services")
+    id ("org.jetbrains.kotlin.android")
+    id ("com.google.gms.google-services")
+
+//    id ("kotlin-android")
+//    id ("kotlin-parcelize")
+//    id ("com.google.gms.google-services")
 }
 
 android {
@@ -35,15 +38,19 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         compose = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
     }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -62,6 +69,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    //Compose
     implementation("androidx.compose.runtime:runtime:1.5.3")
     implementation("androidx.compose.foundation:foundation:1.5.3")
     implementation("androidx.compose.material3:material3:1.1.2")
@@ -78,6 +87,7 @@ dependencies {
     //Navegation
     implementation("androidx.navigation:navigation-compose:2.7.4")
     implementation("androidx.navigation:navigation-runtime-ktx:2.7.4")
+    //Hilt
 
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
