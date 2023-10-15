@@ -68,6 +68,9 @@ fun LoginScreen(
                 UserForm(isCreateAccount = true){
                         email, password ->
                     Log.d("RetoTécnicoMM", "Creando con $email y $password")
+                    viewModel.createUsersWithEmailandPassword(email, password){
+                        navController.navigate(Screens.HomeScreen.name)
+                    }
                 }
             }
             Spacer(modifier = Modifier.height(16.dp))

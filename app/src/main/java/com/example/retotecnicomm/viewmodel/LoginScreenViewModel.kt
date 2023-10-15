@@ -33,5 +33,30 @@ class LoginScreenViewModel: ViewModel() {
 
     }
 
-
+    fun createUsersWithEmailandPassword(
+        email:String,
+        password: String,
+        home: ()-> Unit
+    ){
+        if(_loading.value == false){
+            _loading.value = true
+            viewModelScope.launch{
+                try {
+                    auth.createUserWithEmailAndPassword(email, password)
+                      .addOnCompleteListener { task ->
+                            if(task.isSuccessful){
+                                Log.d("retotecnicomm", "createUserWithEmailandPassword done!!")
+                                home()
+                            }else{
+                                Log.d("retotecnicomm", "createUserWithEmailandPassword: ${task.result.toString()}")
+                            }
+                        }
+                }
+                catch(ex:Exception){
+                    Log.d("retotecnicomm", "createUserWithEmailandPassword: ${ex.message}")
+                }
+                _loading.value = false
+            }
+        }
+    }
 }
