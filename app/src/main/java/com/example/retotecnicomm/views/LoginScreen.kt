@@ -96,62 +96,6 @@ fun LoginScreen(
             }
         }
     }
-
-//    var username by remember { mutableStateOf("Name") }
-//    var password by remember { mutableStateOf("Password") }
-//
-//    val keyboardControler = LocalSoftwareKeyboardController.current
-//
-//    Column(
-//        modifier = Modifier
-//            .fillMaxSize()
-//            .padding(16.dp)
-//    ){
-//        Text(text = "Login")
-//
-//        // Username TextField
-//        TextField(
-//            value=username,
-//            onValueChange = {
-//                username = it
-//            },
-//            keyboardOptions = KeyboardOptions(
-//                imeAction = ImeAction.Next
-//            ),
-//            modifier = Modifier
-//                .fillMaxWidth()
-//                .padding(8.dp)
-//        )
-//
-//        // Password TextField
-//        TextField(
-//            value=password,
-//            onValueChange = {
-//                password = it
-//            },
-//            keyboardOptions = KeyboardOptions(
-//                keyboardType = KeyboardType.Password,
-//                imeAction = ImeAction.Done
-//            ),
-//            keyboardActions = KeyboardActions(
-//                onNext = {
-//                    keyboardControler?.hide()
-//                }
-//            ),
-//            modifier = Modifier
-//                .fillMaxWidth()
-//                .padding(8.dp)
-//        )
-//
-//        Button(
-//            onClick = { goToHome() },
-//            modifier = Modifier
-//                .fillMaxWidth()
-//                .padding(8.dp)
-//        ) {
-//            Text(text = "Login")
-//        }
-//    }
 }
 
 @OptIn(ExperimentalComposeUiApi::class)
