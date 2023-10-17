@@ -1,4 +1,4 @@
-package com.example.retotecnicomm.views
+package com.example.retotecnicomm.presentation
 
 
 //import androidx.compose.runtime.*
@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -24,9 +23,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.retotecnicomm.components.CardImage
-import com.example.retotecnicomm.ui.utils.FileUtils
-import com.example.retotecnicomm.viewmodel.HomeViewModel
+//import com.example.retotecnicomm.components.CardImage
+//import com.example.retotecnicomm.ui.utils.FileUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
