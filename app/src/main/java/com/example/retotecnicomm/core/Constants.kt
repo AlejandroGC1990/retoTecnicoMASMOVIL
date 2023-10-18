@@ -2,13 +2,13 @@ package com.example.retotecnicomm.core
 
 object Constants {
 
-    //IMAG
-    const val IMAGE_TABLE = "image_table"
+    //Room
+    const val PHOTO_TABLE = "photo_table"
 
     //API Imgur
-    const val CLIENT_ID = "45bc4918cbb1f25"
-    const val REFRESH_TOKEN_IMGUR = "9788243fb0a927c1fc5aebf16b4a44b5ef377859"
-    const val BASE_URL = "https://api.imgur.com/"
+//    const val CLIENT_ID = "45bc4918cbb1f25"
+//    const val REFRESH_TOKEN_IMGUR = "9788243fb0a927c1fc5aebf16b4a44b5ef377859"
+//    const val BASE_URL = "https://api.imgur.com/"
 
     //Screens
     const val SCREEN_SPLASH = "Splash"
@@ -16,9 +16,9 @@ object Constants {
     const val SCREEN_HOME = "Home"
 
     //Actions
-    const val ADD_IMAGE = "Add image"
-    const val REMOVE_IMAGE = "Remove image"
-    const val EDIT_IMAGE = "Edit image"
+    const val ADD_PHOTO = "Add photo"
+    const val REMOVE_PHOTO = "Remove photo"
+    const val EDIT_PHOTO = "Edit photo"
 
     //Buttons
     const val ADD = "Add"
@@ -26,7 +26,7 @@ object Constants {
     const val UPDATE = "Update"
 
     //Placeholders
-    const val IMAGE_NAME = "Image name"
-    const val IMAGE_DESCRIPTION = "Image description"
+    const val PHOTO_NAME = "Photo name"
+    const val PHOTO_DESCRIPTION = "Photo description"
 
 }

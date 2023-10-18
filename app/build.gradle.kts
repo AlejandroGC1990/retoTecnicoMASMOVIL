@@ -75,6 +75,12 @@ dependencies {
     implementation("androidx.compose.foundation:foundation:1.5.3")
     implementation("androidx.compose.ui:ui:1.5.3")
     implementation("androidx.compose.material3:material3:1.1.2")
+
+    //Room
+    implementation("androidx.room:room-runtime:2.5.2")
+    implementation("androidx.room:room-compiler:2.5.2")
+    implementation("androidx.room:room-ktx:2.5.2")
+
     //Icons extendidos
     implementation("androidx.compose.material:material-icons-extended:1.5.3")
     implementation("androidx.compose.ui:ui:1.5.3")
